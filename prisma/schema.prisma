@@ -1,0 +1,62 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+model Device {
+  id               String   @id @default(cuid())
+  title            String
+  subtitle         String
+  description      String
+  methodCode       String
+  versionNumber    String
+  issueDate        String
+  lastReview       String
+  approvedBy       String
+  standard         String
+  detectionLimit   String
+  range            String
+  repeatability    String
+  enrichmentFactor String
+  sampleVolume     String
+  measurementTime  String
+  purpose             String
+  scope               String?
+  principleOfOperation String?
+  approvedStandards   String[]
+  extractionSolvent   String?
+  sampleCleanUp       String?
+  displaySystem       String?
+  interfaces          String?
+  software            String?
+  internalMemory      String?
+  alarmTrackingSystem String?
+  powerRequirements   String?
+  dimensions          String?
+  weight              String?
+  autosampler         String?
+  applications        String[]
+  advantages          String[]
+  warnings            String[]
+  steps               Json
+  videoUrl            String?
+  audioUrl            String?
+  imageUrl            String?
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@map("devices")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String
+  role      String   @default("ADMIN")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}

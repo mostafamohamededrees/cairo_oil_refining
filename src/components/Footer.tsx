@@ -1,22 +1,34 @@
-import Link from "next/link";
-import { Heart } from "lucide-react";
-
 export default function Footer() {
   return (
-    <footer className="mt-12 py-6 border-t border-gray-200 bg-white">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <p className="text-sm text-gray-500 flex items-center justify-center gap-1.5 font-medium flex-wrap">
-          © {new Date().getFullYear()} جميع الحقوق محفوظة. تم التطوير بواسطة 
-          <Link 
-            href="https://www.linkedin.com/in/mus-tafaa-/" 
-            target="_blank" 
-            className="text-blue-600 font-bold hover:text-black transition-colors flex items-center gap-1 mx-1"
+    <footer className="w-full py-6 mt-auto border-t border-gray-200 bg-gray-50 text-center">
+      <div className="flex items-center justify-center gap-3 text-sm text-gray-600 mb-2">
+        <span>
+          Developed with <span className="text-red-500">♥</span> by{' '}
+          <a
+            href="https://www.linkedin.com/in/mus-tafaa-/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-gray-800 hover:text-blue-600 transition-colors"
           >
             Mustafa Mohamed
-          </Link>
-          <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500 animate-pulse" />
-        </p>
+          </a>
+        </span>
+        <span className="text-gray-300">|</span>
+        <span>
+          Supervised by:{' '}
+          <a
+            href="https://www.linkedin.com/in/chemist-abdelrahman-khalaf209"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-gray-800 hover:text-blue-600 transition-colors"
+          >
+            Chemist Abd Elrahman Khlaf
+          </a>
+        </span>
       </div>
+      <p className="text-xs text-gray-400">
+        © {new Date().getFullYear()} All rights reserved.
+      </p>
     </footer>
   );
 }
